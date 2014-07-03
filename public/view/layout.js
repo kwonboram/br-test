@@ -2,10 +2,10 @@
 
 var layoutApp = angular.module('layoutApp',[]);
 
-// layoutApp.run(function($templateCache){
-// 	$templateCache.put('plus2','<div><div ng-repeat="item in items"><input type="number", ng-model="config[$index]">'+
-// 		'<button ng-click="items.push($index+1);setIndex($index); disabled">add</button></div><span ng-transclude></div> ');
-// });
+layoutApp.run(function($templateCache){
+	$templateCache.put('plus2','<div><div ng-repeat="item in items"><input type="number", ng-model="config[$index]">'+
+		'<button ng-click="items.push($index+1);setIndex($index); disabled">add</button></div><span ng-transclude></div> ');
+});
 
 layoutApp.controller('bodyCtrl', function ($scope){
 	$scope.scopeTest = 'testing';
@@ -33,7 +33,7 @@ layoutApp.directive('testDirective', function ($templateCache){
 			setIndex: '&'
 		}, //true, primitive x / false primitive됨.
 		transclude: true,
-		templateUrl: 'view/plus.jade',
+		templateUrl: 'plus2',
 		controller: function ($scope,$element,$attrs,$transclude){
 			this.show = function(){
 				//console.log('request function');
