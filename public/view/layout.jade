@@ -1,0 +1,56 @@
+doctype html
+html(ng-app='layoutApp')
+	head
+		link(rel='stylesheet', href='/stylesheets/style.css')
+		script(src='/lib/jquery/jquery-1.10.2.js')
+		script(src='/lib/angular/angular.js')
+		script(src='/lib/angular/angular-animate.js')
+		script(src='/lib/angular/angular-resource.js')
+		script(src='/lib/angular/angular-route.js')
+		script(src='/view/layout.js')
+	body
+		div(ng-controller='bodyCtrl')
+			h2 number
+			test-directive(config='config', items='items', set-index='setIndex(index)') status
+			//- element-test1()
+			//- div(element-test2)
+			//- div(class= 'element-test3')
+			<!--directive: element-test4-->
+			
+			//- div(ng-repeat='item in items')
+			//- 	test-directive2(config='config')
+
+
+		//- div(ng-controller='bodyCtrl')
+		//- 	h1 test page
+		//- 	br 
+		//- 	test-directive(config='config', scope-test='scopeTest')
+		//- 		sapn(ng-congroller='bodyCtrl2') scopeTest : {{scopeTest}}
+
+
+
+
+		//- h2 Parent Scope
+		//- input(ng-model= "foo")
+		//- br
+
+		//- my-component(attribute-foo= "{{foo}}", binding-foo= "foo", isolated-expression-foo="updateFoo(newFoo)")
+		
+		//- h2 Attridute
+		//- div
+		//- 	strong get: {{isolatedAttributeFoo}}
+		//- div
+		//- 	strong set: 
+		//- 	input(ng-model="isolatedAttributeFoo")
+
+		//- h2 Binding
+		//- div
+		//- 	strong get: {{isolatedBindingFoo}}
+		//- div
+		//- 	strong set: 
+		//- 	input(ng-model= "isolatedBindingFoo")
+
+		//- h2 Expression
+		//- div
+		//- 	input(ng-model= "isolatedFoo")
+		//- 	button(ng-click= "isolatedExpressionFoo({newFoo:isolatedFoo})") Submit
